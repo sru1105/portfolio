@@ -1,39 +1,37 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Srushti Venkatesh Reddy",
+  author: "Srushti Venkatesh Reddy",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+    "masters student in cmu",
   lang: "en",
   siteLogo: "/alejandro-small.jpg",
   navLinks: [
+    { text: "Education", href: "#education"},
     { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
     { text: "About", href: "#about" },
   ],
   socialLinks: [
-    { text: "Twitter", href: "https://github.com/immois/astro-zen" },
-    { text: "LinkedIn", href: "https://github.com/immois/astro-zen" },
-    { text: "Github", href: "https://github.com/immois/astro-zen" },
-    { text: "Youtube", href: "https://github.com/immois/astro-zen" },
-    { text: "Dribbble", href: "https://github.com/immois/astro-zen" },
+    { text: "LinkedIn", href: "https://www.linkedin.com/in/srushti-venkatesh-reddy/" },
+    { text: "Github", href: "https://github.com/sru1105" },
   ],
   socialImage: "/zen-og.png",
-  canonicalURL: "https://astro-zen.vercel.app",
+  canonicalURL: "https://srushti.vercel.app",
 };
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Alejandro Múnez",
+    name: "Srushti Venkatesh Reddy",
     specialty: "Mobile & Web Developer",
     summary:
       "Developer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    email: "example@email.com",
+    email: "srushtiv@andrew.cmu.edu",
   },
   experience: [
     {
-      company: "Zalmart",
+      company: "",
       position: "Lead Android Developer",
       startDate: "May 2018",
       endDate: "Sept 2020",
