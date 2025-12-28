@@ -2,7 +2,7 @@
 
 A minimalist, accessible and responsive portfolio website built with Astro and TailwindCSS.
 
-## 🙏 Credits
+## Credits
 
 This portfolio is based on the [AstroZen template](https://github.com/immois/astro-zen) by [immois](https://github.com/immois). Thank you for creating this excellent foundation!
 
