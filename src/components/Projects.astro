@@ -1,6 +1,5 @@
 ---
 import Section from "./Section.astro";
-import { Image } from "astro:assets";
 import type { ProjectProps } from "@types";
 
 interface Props {
@@ -11,49 +10,56 @@ const { projects } = Astro.props;
 ---
 
 <Section text="Featured Projects" href="projects">
-  {
-    projects.map(({ name, summary, image, linkPreview, linkSource }, index) => {
-      const top = 98 + index * 40;
-      return (
-        <div
-          style={`top: ${top}px;`}
-          class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
-        >
-          <div class="bg-difu relative z-[1] grid h-[580px] w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
-            <div class="px-6 pt-12">
-              <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
-                {name}
-              </h3>
-              <p class="text-base text-neutral">{summary}</p>
-              <div class="flex gap-5 pt-10 text-white">
-                <a
-                  href={linkSource}
-                  target="_blank"
-                  class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
-                >
-                  Source
-                </a>
-                <a
-                  href={linkPreview}
-                  target="_blank"
-                  class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
-                >
-                  Preview
-                </a>
+  <div class="flex flex-col gap-6">
+    {
+      projects.map(({ name, summary, techStack, linkPreview, linkSource }) => {
+        return (
+          <div class="rounded-2xl border border-neutral/20 bg-white">
+            <div class="bg-difu relative z-[1] rounded-2xl bg-gray-50 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-['']">
+              <div class="px-6 py-6">
+                <h3 class="mb-4 font-serif text-2xl font-medium text-primary">
+                  {name}
+                </h3>
+                {Array.isArray(summary) ? (
+                  <ul class="mb-4 space-y-2 text-base text-neutral">
+                    {summary.map((point) => (
+                      <li class="flex items-start">
+                        <span class="mr-2 text-primary">•</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p class="mb-4 text-base text-neutral">{summary}</p>
+                )}
+                {techStack && techStack.length > 0 && (
+                  <div class="mb-4">
+                    <p class="mb-2 text-sm font-medium text-primary">Tech Stack:</p>
+                    <div class="flex flex-wrap gap-2">
+                      {techStack.map((tech) => (
+                        <span class="rounded-md bg-neutral/10 px-3 py-1 text-sm text-neutral">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {linkSource && (
+                  <div class="pt-2">
+                    <a
+                      href={linkSource}
+                      target="_blank"
+                      class="text-primary after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
-            <div class="flex items-end justify-end overflow-hidden">
-              <Image
-                class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-none object-left-top sm:h-[85%] sm:w-full"
-                src={image}
-                alt={name}
-                width="736"
-                height="483"
-              />
-            </div>
           </div>
-        </div>
-      );
-    })
-  }
+        );
+      })
+    }
+  </div>
 </Section>
