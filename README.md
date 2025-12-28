@@ -1,4 +1,4 @@
-# Personal Portfolio Website
+## Personal Portfolio Website
 
 A minimalist, accessible and responsive portfolio website built with Astro and TailwindCSS.
 
