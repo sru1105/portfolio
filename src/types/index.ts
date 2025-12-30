@@ -12,6 +12,7 @@ export interface SiteContent {
   hero: HeroProps;
   education: EducationProps[];
   experience: ExperienceProps[];
+  research: ExperienceProps[];
   skills: SkillsProps;
   projects: ProjectProps[];
   about: AboutProps;
@@ -41,6 +42,7 @@ export interface ExperienceProps {
   startDate: string;
   endDate: string;
   summary: string | string[];
+  techStack?: string[];
 }
 
 export interface ProjectProps {
@@ -52,10 +54,7 @@ export interface ProjectProps {
 }
 
 export interface SkillsProps {
-  categories: {
-    name: string;
-    items: string[];
-  }[];
+  items: string[];
 }
 
 export interface AboutProps {

@@ -11,15 +11,15 @@ const { projects } = Astro.props;
 
 <Section text="Featured Projects" href="projects">
   <div class="flex flex-col gap-6">
-    {
+  {
       projects.map(({ name, summary, techStack, linkPreview, linkSource }) => {
-        return (
-          <div class="rounded-2xl border border-neutral/20 bg-white">
-            <div class="bg-difu relative z-[1] rounded-2xl bg-gray-50 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-['']">
+      return (
+          <div class="rounded-2xl border border-neutral/20 bg-black">
+            <div class="bg-difu relative z-[1] rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-['']">
               <div class="px-6 py-6">
                 <h3 class="mb-4 font-serif text-2xl font-medium text-primary">
-                  {name}
-                </h3>
+                {name}
+              </h3>
                 {Array.isArray(summary) ? (
                   <ul class="mb-4 space-y-2 text-base text-neutral">
                     {summary.map((point) => (
@@ -46,20 +46,20 @@ const { projects } = Astro.props;
                 )}
                 {linkSource && (
                   <div class="pt-2">
-                    <a
-                      href={linkSource}
-                      target="_blank"
-                      class="text-primary after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
-                    >
+                <a
+                  href={linkSource}
+                  target="_blank"
+                      class="text-white after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
+                >
                       GitHub
-                    </a>
-                  </div>
-                )}
+                </a>
               </div>
+                )}
             </div>
           </div>
-        );
-      })
-    }
+        </div>
+      );
+    })
+  }
   </div>
 </Section>

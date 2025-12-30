@@ -10,11 +10,11 @@ const { education } = Astro.props;
 ---
 
 <Section text="Education" href="education">
-  <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+  <div class="flex flex-col gap-8">
     {
       education.map(({ institution, degree, specialization, startDate, endDate, coursework, summary }) => (
         <div class="mb-10">
-          <h3 class="mb-1.5 font-serif text-2xl font-semibold text-black">
+          <h3 class="mb-1.5 font-serif text-2xl font-semibold text-white">
             {institution}
           </h3>
           <div class="flex flex-col items-start pb-5">
@@ -24,7 +24,7 @@ const { education } = Astro.props;
             {specialization && (
               <p class="mb-1 text-base text-neutral">{specialization}</p>
             )}
-            <span class="pb-[2px] text-sm text-neutral">
+            <span class="pb-[2px] text-sm text-white/70">
               {startDate} — {endDate}
             </span>
           </div>
